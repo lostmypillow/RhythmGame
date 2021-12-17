@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .flip-container {
+        perspective: 800px;
+      }
+
+      .flip-container,
+      .front,
+      .back {
+        width: 250px;
+        height: 250px;
+      }
+
+      /* flip speed */
+      .flipper {
+        transition: 0.8s;
+        transform-style: preserve-3d;
+        position: relative;
+        transform-origin: center;
+      }
+
+      /* hide back of pane during swap */
+      .front,
+      .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      /* front pane, placed above back */
+      .front {
+        z-index: 2;
+      }
+
+      /* back, initially hidden pane */
+
+      .back {
+        transform: rotateY(180deg);
+      }
+
+      .artist-1 {
+        background-size: cover;
+      }
+
+      .butto {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front artist-1" id="front">
+          <img src="front.png" height="250px" />
+        </div>
+        <div class="back" id="back"></div>
+      </div>
+    </div>
+    <div class="butto" ; id="top">start</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+      //$.fn.myFunction = function(){}
+      $(".flip-container").each(function(i) {
+        var thisFlipper = $(this).find(".flipper");
+        var rotate = 0;
+
+        //top button
+//
+        if (key == "38") {
+          $("#back").empty();
+          $("#back").prepend('<img src = "back.png" height=250px>');
+
+          rotate += 180;
+          thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
+          $("#front").empty();
+          $("#front").prepend('<img src = "back.png" height=250px>');
+        } else if (key == "37") {
+          $("#back").empty();
+          $("#back").prepend('<img src = "left.jpg" height=250px>');
+          rotate += 180;
+          thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
+          $("#front").empty();
+          $("#front").prepend('<img src = "left.jpg" height=250px>');
+        } else if (key == "39") {
+          $("#back").empty();
+          $("#back").prepend('<img src = "right.png" height=250px>');
+          rotate += 180;
+          thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
+          $("#front").empty();
+          $("#front").prepend('<img src = "right.png" height=250px>');
+        } else if (key == "40") {
+          $("#back").empty();
+          $("#back").prepend('<img src = "front.png" height=250px>');
+          rotate += 180;
+          thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
+          $("#front").empty();
+          $("#front").prepend('<img src = "front.png" height=250px>');
+        }
+      });
+    });
+
+
+      //document outer
+
+    </script>
+  </body>
+</html>
+v>

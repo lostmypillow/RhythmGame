@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    body {
+      height: 500px;
+      width: 500px;
+      background: orange;
+    }
+
+    #mouse {
+      position: fixed;
+      height: 20px;
+      width: 20px;
+      background: black;
+      top: 40px;
+      left: 40px;
+      z-index: 100;
+      transition: .1s linear
+    }
+    </style>
+  </head>
+    <body style="height">
+    <div id="mouse"></div>
+  </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+    document.body.addEventListener("mousemove", function(e) {
+
+      var curX = e.clientX;
+      var curY = e.clientY;
+
+      document.getElementById('mouse').style.left = curX - 10 + 'px';
+      document.getElementById('mouse').style.top = curY - 10 + 'px';
+    });
+    </script>
+  </body>
+</html>

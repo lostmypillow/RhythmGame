@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+div {
+  height: 100%;
+  /* ... */
+}
+img {
+  height:100%;
+}
+    .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 1s
+  }
+
+  .fade-enter,
+  .fade-leave-to
+  /* .fade-leave-active in <2.1.8 */
+
+  {
+    opacity: 0
+  }
+
+  .box {
+
+  }
+
+  .yellow {
+
+    background-image: url(tron.jpg);
+  }
+
+  .blue {
+
+    background-color: green;
+  }
+
+    </style>
+  </head>
+    <body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+      <div id="vue-instance">
+  <div>
+    <transition name="fade" mode="out-in">
+      <div key="3" v-if="show">
+        <div class="box yellow">
+          <!--img src ="tron.jpg"-->
+          <button class="butto" @click="show = !show"> hi </button>
+        </div>
+      </div>
+      <div key="1" v-if="!show">
+        <div class="box blue">
+          <button class="butto" @click="show = !show"> hi </button>
+        </div>
+      </div>
+    </transition>
+
+  </div>
+</div>
+
+<script>
+var vm = new Vue({
+  el: '#vue-instance',
+  data: {
+    show: true
+  }
+});
+
+</script>
+  </body>
+</html>

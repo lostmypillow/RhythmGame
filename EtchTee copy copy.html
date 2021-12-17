@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    #mousemove {
+      position: absolute
+    }
+    #first, #second {
+      position: relative
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="mousemove">
+  <img id="first" src="left.jpg">
+  <img id="second" src="front.png">
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+
+    $(document).mousemove(function (e){
+  $("#mousemove").css({
+    left: e.pageX,
+    top: e.pageY
+  });
+});
+
+setInterval(function () {
+  $("#first").animate({
+    left: "-=100px"
+  }, 2000);
+  $("#second").animate({
+    left: "+=100px"
+  }, 2000);
+}, 2000);
+    </script>
+  </body>
+</html>

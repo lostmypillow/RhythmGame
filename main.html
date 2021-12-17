@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+.outer_wrapper{
+  width: 1200px;
+  height: 700px;
+  background-color:green
+
+}
+.inner_wrapper {
+  width:1200px;
+  height:700px;
+  background-color: blue;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s
+}
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active in <2.1.8 */
+
+{
+  opacity: 0
+}
+
+
+
+</style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+<div class ="entire">
+  <transition name = "fade" mode = "out-in">
+  <div class ="outer_wrapper" key = "3" v-if="show">
+
+    <div class = "imagenes">
+  </div>
+  <button class = "st_btn" id = "stbtn" @click="show = !show" v-if="show">
+    <p>
+      start
+    </p>
+  </button>
+</div>
+
+<div class ="inner_wrapper" key = "1" v-if="!show">
+<button class = "dem_btn" id = "dembtn">
+  <p>
+    demo
+  </p>
+</button>
+<button class = "cred_btn" id = "credbtn">
+  <p>
+    credits
+  </p>
+</button>
+</div>
+</div>
+<div class = "main_wrapper">
+  <div class = "spin_wrapper">
+    <div class = "spin_inner">
+      <div class = "ls_front"></div>
+      <div class = "ls_back"></div>
+      <div class = "rs_front"></div>
+      <div class = "rs_back"></div>
+    </div>
+  </div>
+
+
+
+  <div class = "game_wrapper">
+  </div>
+  <div class = "cred_wrapper">
+    <button class = "bk_btn" id = "bkbtn"> back </button>
+  </div>
+
+</div>
+
+<script>
+var new Vue ({
+  el:'entire',
+  data:{
+    show:true
+  }
+}
+
+)
+</script>
+</body>
+</html>

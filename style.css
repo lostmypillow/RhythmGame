@@ -1,0 +1,51 @@
+.card_cont {
+  perspective: 800px;
+}
+
+.card_cont,
+.front,
+.back {
+  width: 250px;
+  height: 250px;
+}
+
+.flipper {
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.front {
+  z-index: 2;
+}
+.back {
+  content:url("back.jpg");
+  transform: rotateY(180deg);
+}
+.initial {
+  content:url("front.jpg")
+}
+
+
+
+.butto {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+img {
+  width: 400px,
+  height: auto
+}
