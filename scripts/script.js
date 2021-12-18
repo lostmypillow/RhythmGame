@@ -5,7 +5,12 @@ var isHolding = {
   l: false
 };
 
-var hits = { perfect: 0, good: 0, bad: 0, miss: 0 };
+var hits = {
+  perfect: 0,
+  good: 0,
+  bad: 0,
+  miss: 0
+};
 var multiplier = {
   perfect: 1,
   good: 0.8,
@@ -26,7 +31,7 @@ var tracks;
 var keypress;
 var comboText;
 
-var initializeNotes = function () {
+var initializeNotes = function() {
   var noteElement;
   var trackElement;
 
@@ -34,11 +39,11 @@ var initializeNotes = function () {
     trackContainer.removeChild(trackContainer.lastChild);
   }
 
-  song.sheet.forEach(function (key, index) {
+  song.sheet.forEach(function(key, index) {
     trackElement = document.createElement('div');
     trackElement.classList.add('track');
 
-    key.notes.forEach(function (note) {
+    key.notes.forEach(function(note) {
       noteElement = document.createElement('div');
       noteElement.classList.add('note');
       noteElement.classList.add('note--' + index);
@@ -56,11 +61,11 @@ var initializeNotes = function () {
   });
 };
 
-var setupSpeed = function () {
+var setupSpeed = function() {
   var buttons = document.querySelectorAll('.btn--small');
 
-  buttons.forEach(function (button) {
-    button.addEventListener('click', function () {
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
       if (this.innerHTML === '1x') {
         buttons[0].className = 'btn btn--small btn--selected';
         buttons[1].className = 'btn btn--small';
@@ -103,32 +108,32 @@ var setupSpeed = function () {
 //  initializeNotes();
 //};
 var setuphomebutton = function() {
-var homebutton = document.querySelector('.homebutton');
-homebutton.addEventListener('click', function (){
-document.querySelector('.homewrapper').style.opacity = 0;
- document.querySelector('#parent').style.opacity = 1;
-});
+  var homebutton = document.querySelector('.homebutton');
+  homebutton.addEventListener('click', function() {
+    document.querySelector('.homewrapper').style.opacity = 0;
+    document.querySelector('#parent').style.opacity = 1;
+  });
 };
 
 
 
-var setupStartButton = function () {
+var setupStartButton = function() {
   var startButton = document.querySelector('.btn--start');
-  startButton.addEventListener('click', function () {
+  startButton.addEventListener('click', function() {
     isPlaying = true;
     startTime = Date.now();
 
     startTimer(song.duration);
     document.querySelector('.menu').style.opacity = 0;
-document.querySelector('.left_sec').style.opacity = 1;
+    document.querySelector('.left_sec').style.opacity = 1;
     document.querySelector('.song').play();
-    document.querySelectorAll('.note').forEach(function (note) {
+    document.querySelectorAll('.note').forEach(function(note) {
       note.style.animationPlayState = 'running';
     });
   });
 };
 
-var startTimer = function (duration) {
+var startTimer = function(duration) {
   var display = document.querySelector('.summary__timer');
   var timer = duration;
   var minutes;
@@ -137,7 +142,7 @@ var startTimer = function (duration) {
   display.style.display = 'block';
   display.style.opacity = 1;
 
-  var songDurationInterval = setInterval(function () {
+  var songDurationInterval = setInterval(function() {
     minutes = Math.floor(timer / 60);
     seconds = timer % 60;
     minutes = minutes < 10 ? '0' + minutes : minutes;
@@ -153,7 +158,7 @@ var startTimer = function (duration) {
   }, 1000);
 };
 
-var showResult = function () {
+var showResult = function() {
   document.querySelector('.perfect__count').innerHTML = hits.perfect;
   document.querySelector('.good__count').innerHTML = hits.good;
   document.querySelector('.bad__count').innerHTML = hits.bad;
@@ -164,8 +169,8 @@ var showResult = function () {
   document.querySelector('.summary__result').style.opacity = 1;
 };
 
-var setupNoteMiss = function () {
-  trackContainer.addEventListener('animationend', function (event) {
+var setupNoteMiss = function() {
+  trackContainer.addEventListener('animationend', function(event) {
     var index = event.target.classList.item(1)[6];
 
     displayAccuracy('miss');
@@ -181,12 +186,12 @@ var setupNoteMiss = function () {
  * Allows keys to be only pressed one time. Prevents keydown event
  * from being handled multiple times while held down.
  */
-var setupKeys = function () {
-  document.addEventListener('keydown', function (event) {
+var setupKeys = function() {
+  document.addEventListener('keydown', function(event) {
     var keyIndex = getKeyIndex(event.key);
-
-    if (Object.keys(isHolding).indexOf(event.key) !== -1
-      && !isHolding[event.key]) {
+      var flipper = document.querySelectorAll('.flipper');
+    if (Object.keys(isHolding).indexOf(event.key) !== -1 &&
+      !isHolding[event.key]) {
       isHolding[event.key] = true;
       keypress[keyIndex].style.display = 'block';
 
@@ -194,53 +199,52 @@ var setupKeys = function () {
         judge(keyIndex);
       }
       flipper.forEach(function(i) {
-         var rotate = 0;
-         if (keyIndex === 0) {
-           document.getElementById('bleft').innerHTML = "";
-           document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
-           rotate += 180;
-           flipper.style.transform = "rotateY(" + rotate + "deg)";
-           document.getElementById('fleft').innerHTML = "";
-           document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+        var rotate = 0;
+        if (keyIndex === 0) {
+          document.getElementById('bleft').innerHTML = "";
+          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          rotate += 180;
+          flipper.style.transform = "rotateY(" + rotate + "deg)";
+          document.getElementById('fleft').innerHTML = "";
+          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
 
 
-         }
-         else if (keyIndex === 1) {
-           document.getElementById('bleft').innerHTML = "";
-           document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
-           rotate += 180;
-           flipper.style.transform = "rotateY(" + rotate + "deg)";
-           document.getElementById('fleft').innerHTML = "";
-           document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+        } else if (keyIndex === 1) {
+          document.getElementById('bleft').innerHTML = "";
+          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          rotate += 180;
+          flipper.style.transform = "rotateY(" + rotate + "deg)";
+          document.getElementById('fleft').innerHTML = "";
+          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
 
 
-         }
-         if (keyIndex === 2) {
-           document.getElementById('bleft').innerHTML = "";
-           document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
-           rotate += 180;
-           flipper.style.transform = "rotateY(" + rotate + "deg)";
-           document.getElementById('fleft').innerHTML = "";
-           document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+        }
+        if (keyIndex === 2) {
+          document.getElementById('bleft').innerHTML = "";
+          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          rotate += 180;
+          flipper.style.transform = "rotateY(" + rotate + "deg)";
+          document.getElementById('fleft').innerHTML = "";
+          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
 
 
-         }
-         if (keyIndex === 3) {
-           document.getElementById('bleft').innerHTML = "";
-           document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
-           rotate += 180;
-           flipper.style.transform = "rotateY(" + rotate + "deg)";
-           document.getElementById('fleft').innerHTML = "";
-           document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+        }
+        if (keyIndex === 3) {
+          document.getElementById('bleft').innerHTML = "";
+          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          rotate += 180;
+          flipper.style.transform = "rotateY(" + rotate + "deg)";
+          document.getElementById('fleft').innerHTML = "";
+          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
 
 
-         }
-       });
+        }
+      });
 
     }
   });
 
-  document.addEventListener('keyup', function (event) {
+  document.addEventListener('keyup', function(event) {
     if (Object.keys(isHolding).indexOf(event.key) !== -1) {
       var keyIndex = getKeyIndex(event.key);
       isHolding[event.key] = false;
@@ -249,7 +253,7 @@ var setupKeys = function () {
   });
 };
 
-var getKeyIndex = function (key) {
+var getKeyIndex = function(key) {
   if (key === 's') {
     return 0;
   } else if (key === 'f') {
@@ -264,7 +268,7 @@ var getKeyIndex = function (key) {
 
 
 
-var judge = function (index) {
+var judge = function(index) {
   var timeInSecond = (Date.now() - startTime) / 1000;
   var nextNoteIndex = song.sheet[index].next;
   var nextNote = song.sheet[index].notes[nextNoteIndex];
@@ -291,7 +295,7 @@ var judge = function (index) {
   updateNext(index);
 };
 
-var getHitJudgement = function (accuracy) {
+var getHitJudgement = function(accuracy) {
   if (accuracy < 0.1) {
     return 'perfect';
   } else if (accuracy < 0.2) {
@@ -303,7 +307,7 @@ var getHitJudgement = function (accuracy) {
   }
 };
 
-var displayAccuracy = function (accuracy) {
+var displayAccuracy = function(accuracy) {
   var accuracyText = document.createElement('div');
   document.querySelector('.hit__accuracy').remove();
   accuracyText.classList.add('hit__accuracy');
@@ -312,18 +316,18 @@ var displayAccuracy = function (accuracy) {
   document.querySelector('.hit').appendChild(accuracyText);
 };
 
-var showHitEffect = function (index) {
+var showHitEffect = function(index) {
   var key = document.querySelectorAll('.key')[index];
   var hitEffect = document.createElement('div');
   hitEffect.classList.add('key__hit');
   key.appendChild(hitEffect);
 };
 
-var updateHits = function (judgement) {
+var updateHits = function(judgement) {
   hits[judgement]++;
 };
 
-var updateCombo = function (judgement) {
+var updateCombo = function(judgement) {
   if (judgement === 'bad' || judgement === 'miss') {
     combo = 0;
     comboText.innerHTML = '';
@@ -332,11 +336,11 @@ var updateCombo = function (judgement) {
   }
 };
 
-var updateMaxCombo = function () {
+var updateMaxCombo = function() {
   maxCombo = maxCombo > combo ? maxCombo : combo;
 };
 
-var calculateScore = function (judgement) {
+var calculateScore = function(judgement) {
   if (combo >= 80) {
     score += 1000 * multiplier[judgement] * multiplier.combo80;
   } else if (combo >= 40) {
@@ -346,19 +350,19 @@ var calculateScore = function (judgement) {
   }
 };
 
-var removeNoteFromTrack = function (parent, child) {
+var removeNoteFromTrack = function(parent, child) {
   parent.removeChild(child);
 };
 
-var updateNext = function (index) {
+var updateNext = function(index) {
   song.sheet[index].next++;
 };
 
-window.onload = function () {
+window.onload = function() {
   trackContainer = document.querySelector('.track-container');
   keypress = document.querySelectorAll('.keypress');
   comboText = document.querySelector('.hit__combo');
-setuphomebutton();
+  setuphomebutton();
   initializeNotes();
   setupSpeed();
   setupStartButton();

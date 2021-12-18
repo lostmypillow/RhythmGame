@@ -121,21 +121,24 @@ h2 {
   flex: 0 0 calc(100% / 4);
 }
 
-.track:not(:last-child) {
-  border-right: 1px solid grey;
-}
+
 
 .key-container {
   display: flex;
+   flex: 0 0 15%;
+
 }
 
 .key {
   flex: 1 0 calc(100% / 4);
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
-  text-align: center;
+
+justify-content: center;
+align-items: center;
+align-content: center;
   position: relative;
-  font-size: 1.6rem;
+
+
+
 }
 
 
@@ -370,14 +373,25 @@ position:relative;
 }
 
 img {
-
-  position:absolute;
+   height: 100%;
+   width: 100%;
+   object-fit: contain;
 }
  .sprite {
    transition: all 3s;
  }
 
+.alignright {
+  transform: rotate(90deg);
+}
 
+.aligndown {
+  transform: rotate(180deg);
+}
+
+.alignleft {
+  transform: rotate(270deg);
+}
 
 
 

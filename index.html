@@ -1,55 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta property="og:title" content="Rhythm" />
-    <meta
-      property="og:description"
-      content="A vertical scrolling rhythm game where you have to hit the notes falling down, which will appear according to the music."
-    />
-    <meta
-      property="og:url"
-      content="https://chloeliang.github.io/rhythm-game/"
-    />
-    <meta
-      property="og:image"
-      content="https://res.cloudinary.com/nliangxin/image/upload/v1543036731/rhythm.png"
-    />
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="https://img.icons8.com/dusk/50/ecf0f1/musical-notes.png"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Playball"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Game</title>
-  </head>
 
-  <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta property="og:title" content="Rhythm" />
+  <meta property="og:description" content="A vertical scrolling rhythm game where you have to hit the notes falling down, which will appear according to the music." />
+  <meta property="og:url" content="https://chloeliang.github.io/rhythm-game/" />
+  <meta property="og:image" content="https://res.cloudinary.com/nliangxin/image/upload/v1543036731/rhythm.png" />
+  <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/dusk/50/ecf0f1/musical-notes.png" />
+  <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Game</title>
+</head>
 
-    <audio class="song" src="media/music.mp3"></audio>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <main>
-      <div class = "homewrapper">
-        <a class = "homebutton"> Tap to start </a>
-      </div>
-<div id = "parent">
-        <div class ="left_sec">
+  <audio class="song" src="media/music.mp3"></audio>
 
-            <div class="flipper">
-              <div class="front"  id="fleft">
-                <img src="media/top.jpg"/>
-              </div>
-              <div class="back" id = "bleft"></div>
-            </div>
-    
+  <main>
+    <div class="homewrapper">
+      <a class="homebutton"> Tap to start </a>
+    </div>
+    <div id="parent">
+      <div class="left_sec">
+
+        <div class="flipper">
+          <div class="front" id="fleft">
+            <img src="media/top.jpg" />
+          </div>
+          <div class="back" id="bleft"></div>
         </div>
+
+      </div>
 
       <div class="game">
         <div class="hit">
@@ -62,95 +47,104 @@
         <div class="key-container">
           <div class="key key--s key--blue">
             <div class="keypress keypress--blue"></div>
-<img src = "arrow.svg" height="60px">
+            <div class = "aligntop">
+            <img src="img/arrow.svg" height="60px">
+          </div>
           </div>
 
           <div class="key key--f key--blue">
             <div class="keypress keypress--blue"></div>
-            <img src = "arrow.svg" height="60px">
+            <div class = "aligndown">
+            <img src="img/arrow.svg" height="60px">
+          </div>
           </div>
 
 
           <div class="key key--j key--blue">
             <div class="keypress keypress--blue"></div>
-            <img src = "arrow.svg" height="60px">
+            <div class = "alignleft">
+            <img src="img/arrow.svg">
+          </div>
           </div>
 
 
           <div class="key key--l key--blue">
             <div class="keypress keypress--blue"></div>
-            <img src = "arrow.svg" height="60px">
+            <div class = "alignright">
+            <img src="img/arrow.svg">
+          </div>
           </div>
         </div>
       </div>
 
-<div class = "right_sec">
-  <div class="flip-container" >
-    <div class="flipper">
-      <div class="front"  id = 'fright'>
-        <img src="media/top.jpg"/>
-      </div>
-      <div class="back" id = "bright"></div>
-    </div>
-  </div>
-      <div class="menu">
-        <div class="menu__config">
-          <div class="config__speed">
-            <h2>Speed</h2>
-            <div>
-              <a class="btn btn--small btn--selected" href="#">1x</a>
-              <a class="btn btn--small" href="#">2x</a>
-              <a class="btn btn--small" href="#">3x</a>
+      <div class="right_sec">
+        <div class="flip-container">
+          <div class="flipper">
+            <div class="front" id='fright'>
+              <img src="media/top.jpg" />
+            </div>
+            <div class="back" id="bright"></div>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="menu__config">
+            <div class="config__speed">
+              <h2>Speed</h2>
+              <div>
+                <a class="btn btn--small btn--selected" href="#">1x</a>
+                <a class="btn btn--small" href="#">2x</a>
+                <a class="btn btn--small" href="#">3x</a>
+              </div>
+            </div>
+
+
+            <div class="menu_start">
+              <a class="btn btn--primary btn--start" href="#">Start</a>
             </div>
           </div>
-
-
-        <div class="menu_start">
-          <a class="btn btn--primary btn--start" href="#">Start</a>
         </div>
-      </div>
-</div>
-      <div class="summary">
-        <div class="summary__timer"></div>
-        <div class="summary__result">
-          <h2 class="result__heading">Clear</h2>
-          <div class="result__accuracy perfect">
-            <p class="accuracy__heading">Perfect</p>
-            <span>:</span>
-            <p class="accuracy__count perfect__count"></p>
-          </div>
-          <div class="result__accuracy good">
-            <p class="accuracy__heading">Good</p>
-            <span>:</span>
-            <p class="accuracy__count good__count"></p>
-          </div>
-          <div class="result__accuracy bad">
-            <p class="accuracy__heading">Bad</p>
-            <span>:</span>
-            <p class="accuracy__count bad__count"></p>
-          </div>
-          <div class="result__accuracy miss">
-            <p class="accuracy__heading">Miss</p>
-            <span>:</span>
-            <p class="accuracy__count miss__count"></p>
-          </div>
-          <div class="result__accuracy combo">
-            <p class="accuracy__heading">Max Combo</p>
-            <span>:</span>
-            <p class="accuracy__count combo__count"></p>
-          </div>
-          <div class="result__accuracy score">
-            <p class="accuracy__heading">Score</p>
-            <span>:</span>
-            <p class="accuracy__count score__count"></p>
+        <div class="summary">
+          <div class="summary__timer"></div>
+          <div class="summary__result">
+            <h2 class="result__heading">Clear</h2>
+            <div class="result__accuracy perfect">
+              <p class="accuracy__heading">Perfect</p>
+              <span>:</span>
+              <p class="accuracy__count perfect__count"></p>
+            </div>
+            <div class="result__accuracy good">
+              <p class="accuracy__heading">Good</p>
+              <span>:</span>
+              <p class="accuracy__count good__count"></p>
+            </div>
+            <div class="result__accuracy bad">
+              <p class="accuracy__heading">Bad</p>
+              <span>:</span>
+              <p class="accuracy__count bad__count"></p>
+            </div>
+            <div class="result__accuracy miss">
+              <p class="accuracy__heading">Miss</p>
+              <span>:</span>
+              <p class="accuracy__count miss__count"></p>
+            </div>
+            <div class="result__accuracy combo">
+              <p class="accuracy__heading">Max Combo</p>
+              <span>:</span>
+              <p class="accuracy__count combo__count"></p>
+            </div>
+            <div class="result__accuracy score">
+              <p class="accuracy__heading">Score</p>
+              <span>:</span>
+              <p class="accuracy__count score__count"></p>
+            </div>
           </div>
         </div>
-      </div>
 
-    </main>
+  </main>
 
-    <script src="scripts/song.js"></script>
-    <script src="scripts/script.js"></script>
+  <script src="scripts/song.js"></script>
+  <script src="scripts/script.js"></script>
 
-  </body>
+</body>
+
 </html>
