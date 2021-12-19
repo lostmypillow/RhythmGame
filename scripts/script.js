@@ -44,10 +44,15 @@ var initializeNotes = function() {
     trackElement.classList.add('track');
 
     key.notes.forEach(function(note) {
+      var img = document.createElement('img');
+      img.src = "img/arrow.svg";
+      img.height = "100%";
+      img.width ="100%";
       noteElement = document.createElement('div');
       noteElement.classList.add('note');
       noteElement.classList.add('note--' + index);
-      noteElement.style.backgroundColor = key.color;
+    //  noteElement.style.backgroundColor = key.color;//
+    noteElement.appendChild(img);
       noteElement.style.animationName = animation;
       noteElement.style.animationTimingFunction = 'linear';
       noteElement.style.animationDuration = note.duration - speed + 's';
@@ -111,6 +116,7 @@ var setuphomebutton = function() {
   var homebutton = document.querySelector('.homebutton');
   homebutton.addEventListener('click', function() {
     document.querySelector('.homewrapper').style.opacity = 0;
+//    document.querySelector('.homewrapper').style.setProperty = 0;//
     document.querySelector('#parent').style.opacity = 1;
   });
 };
@@ -125,7 +131,11 @@ var setupStartButton = function() {
 
     startTimer(song.duration);
     document.querySelector('.menu').style.opacity = 0;
-    document.querySelector('.left_sec').style.opacity = 1;
+  //  document.querySelector('.left_sec').style.opacity = 1;
+  //  document.querySelector('.left_sec').style.opacity = 1;
+  document.querySelectorAll('.flipper').forEach(function (ha) {
+    ha.style.opacity = 1;
+  });
     document.querySelector('.song').play();
     document.querySelectorAll('.note').forEach(function(note) {
       note.style.animationPlayState = 'running';
@@ -202,20 +212,20 @@ var setupKeys = function() {
         var rotate = 0;
         if (keyIndex === 0) {
           document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
           rotate += 180;
           flipper.style.transform = "rotateY(" + rotate + "deg)";
           document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
 
 
         } else if (keyIndex === 1) {
           document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
           rotate += 180;
           flipper.style.transform = "rotateY(" + rotate + "deg)";
           document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
 
 
         }

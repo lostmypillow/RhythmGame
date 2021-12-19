@@ -6,7 +6,7 @@
 
 :root {
   /* --background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .8)); */
-  --background: white;
+  /*  --background: white; */
   --perfect-color: rgba(255, 101, 229, .8);
   --good-color: rgba(82, 236, 51, .8);
   --bad-color: rgba(207, 53, 53, .8);
@@ -15,12 +15,12 @@
   --score-color: rgba(240, 202, 36, .8);
   /* --hit-effect: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .3)); */
   --hit-color: rgba(255, 255, 255, .8);
-/*  --key-red: rgba(254, 45, 87, 1); */
+  /*  --key-red: rgba(254, 45, 87, 1); */
   --key-blue: rgba(28, 121, 228, 1);
   /* --key-orange: rgba(240, 128, 60, 1);
   --keypress-red: linear-gradient(to top, rgba(254, 45, 87, .6), rgba(254, 45, 87, 0)); */
-  --keypress-blue: linear-gradient(to top, rgba(28, 121, 228, .6), rgba(28, 121, 228, 0));
-/*  --keypress-orange: linear-gradient(to top, rgba(240, 128, 60, .6), rgba(240, 128, 60, 0)); */
+  /**--keypress-blue: linear-gradient(to top, rgba(28, 121, 228, .6), rgba(28, 121, 228, 0));*/
+  /*  --keypress-orange: linear-gradient(to top, rgba(240, 128, 60, .6), rgba(240, 128, 60, 0)); */
 }
 
 html {
@@ -37,11 +37,24 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  opacity:0;
+  opacity: 0;
   transition: all 5s;
+  z-index: 1;
 }
+
 .homewrapper {
   transition: all 2s;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.homebutton {
+  position: absolute;
 }
 
 h2 {
@@ -55,7 +68,6 @@ h2 {
   flex: 0 0 calc(100% / 2);
   flex-direction: column;
   max-width: 35rem;
-  background: black;
 
   position: relative;
   width: 33%;
@@ -121,43 +133,30 @@ h2 {
   flex: 0 0 calc(100% / 4);
 }
 
-
-
 .key-container {
   display: flex;
-   flex: 0 0 15%;
-
+  flex: 0 0 15%;
+  background-color: rgba(0, 0, 0, 0);
+  color: transparent;
 }
 
 .key {
   flex: 1 0 calc(100% / 4);
-
-justify-content: center;
-align-items: center;
-align-content: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   position: relative;
-
-
-
-}
-
-
-
-.key--blue {
-  background-color: white;
   background-image: url("arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-color: transparent;
 }
-
-
-
 
 .note {
   position: absolute;
   width: 100%;
-  height: 1.5rem;
-  top: -1.5rem;
+  height: 100%;
+  top: -29rem;
 }
 
 .keypress {
@@ -195,17 +194,13 @@ align-content: center;
   animation: scaleBorder 1s;
 }
 
-
-
 .keypress--blue {
   background-image: var(--keypress-blue);
 }
 
-
 .menu {
   opacity: 1;
   display: flex;
-
   flex-direction: column;
   flex: 0 0 calc(100% / 2);
   font-size: 2rem;
@@ -217,8 +212,8 @@ align-content: center;
 
 .menu__config {
   display: flex;
-flex-direction: column;
-  position:relative;
+  flex-direction: column;
+  position: relative;
   justify-content: space-around;
 }
 
@@ -274,7 +269,7 @@ flex-direction: column;
 }
 
 .summary {
-position:relative;
+  position: relative;
   color: white;
   text-align: center;
   z-index: -100;
@@ -351,10 +346,9 @@ position:relative;
 
 .left_sec {
   width: 33%;
-     float: right;
-     position:relative;
-     opacity: 0;
-     transition: all 2s;
+  float: right;
+  position: relative;
+
 }
 
 .flip-container {
@@ -364,22 +358,25 @@ position:relative;
 
 .right_sec {
   width: 33%;
-   float: right;
-   position:relative;
+  float: right;
+  position: relative;
+
 }
 
 .clear-fix {
-  clear:both;
+  clear: both;
 }
 
 img {
-   height: 100%;
-   width: 100%;
-   object-fit: contain;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  position: relative;
 }
- .sprite {
-   transition: all 3s;
- }
+
+.sprite {
+  transition: all 3s;
+}
 
 .alignright {
   transform: rotate(90deg);
@@ -393,25 +390,65 @@ img {
   transform: rotate(270deg);
 }
 
-
-
+:root {
+  --homestack: 2;
+  --parentstack: 1;
+}
+.flipper {
+  opacity: 0;
+  transition: all 2s;
+}
+.flip-container {
+  position:relative;
+}
 @keyframes moveDown {
-  0% { top: -1.5rem; }
-  98% { top: 100%; opacity: 1; }
-  100% { top: 105%; opacity: 0; }
+  0% {
+    top: -29rem;
+  }
+
+  98% {
+    top: 95%;
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
 @keyframes moveDownFade {
-  0% { top: -1.5rem; }
-  60% { opacity: 1; }
-  80% { opacity: 0; }
-  98% { top: 100%; opacity: 0; }
-  100% { top: 105%; opacity: 0; }
+  0% {
+    top: -1.5rem;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  98% {
+    top: 100%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
 }
 
 @keyframes fade {
-  10% { opacity: 1; }
-  100% { opacity: 0; }
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes scaleFade {
