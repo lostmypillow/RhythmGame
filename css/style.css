@@ -33,6 +33,13 @@ body {
   overflow: hidden;
 }
 
+h2 {
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+
+/* second page, or main page */
 #parent {
   height: 100vh;
   width: 100vw;
@@ -42,6 +49,7 @@ body {
   z-index: 1;
 }
 
+/* first page, or landing page with graphics */
 .homewrapper {
   transition: all 2s;
   z-index: 2;
@@ -53,15 +61,12 @@ body {
   align-items: center;
 }
 
+/* first page button */
 .homebutton {
   position: absolute;
 }
 
-h2 {
-  padding: 1rem;
-  text-transform: uppercase;
-}
-
+/* main game wrapper */
 .game {
   position: relative;
   display: flex;
@@ -74,6 +79,7 @@ h2 {
   float: left;
 }
 
+/* hit and hit accuracy */
 .hit {
   position: absolute;
   width: 50%;
@@ -122,6 +128,11 @@ h2 {
   animation: fade 1s;
 }
 
+
+
+
+
+/* track wrapper */
 .track-container {
   display: inline-flex;
   flex: 1 0 content;
@@ -133,6 +144,15 @@ h2 {
   flex: 0 0 calc(100% / 4);
 }
 
+.note {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -29rem;
+}
+
+
+/* key wrapper*/
 .key-container {
   display: flex;
   flex: 0 0 15%;
@@ -150,13 +170,6 @@ h2 {
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
-}
-
-.note {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -29rem;
 }
 
 .keypress {
@@ -198,9 +211,15 @@ h2 {
   background-image: var(--keypress-blue);
 }
 
+
+
+
+
+
+
+/* menu on the right */
 .menu {
   opacity: 1;
-
   flex: 0 0 calc(100% / 2);
   font-size: 2rem;
   color: white;
@@ -216,15 +235,6 @@ z-index: 3;
   flex-direction: column;
   position: relative;
   justify-content: space-around;
-}
-
-.heart {
-  color: rgb(255, 59, 59);
-}
-
-.author {
-  text-decoration: underline;
-  color: white;
 }
 
 .btn:link,
@@ -264,10 +274,9 @@ z-index: 3;
   color: white;
 }
 
-.config__challenge .btn--selected {
-  background: white;
-  color: black;
-}
+
+
+/* after game summary */
 
 .summary {
   position: relative;
@@ -345,6 +354,8 @@ z-index: 3;
   color: var(--score-color);
 }
 
+
+/* left section */
 .left_sec {
   width: 33%;
   float: right;
@@ -352,19 +363,21 @@ z-index: 3;
 
 }
 
-.flip-container {
-  max-width: 100%;
-  max-height: 100%;
-position: relative;
-}
-
 .right_sec {
   width: 33%;
   float: right;
   position: relative;
-  display:flex;
+
 
 }
+
+
+/*spinning anime section */
+.flip-container {
+
+}
+
+
 
 .clear-fix {
   clear: both;
@@ -375,12 +388,32 @@ img {
   width: 100%;
   object-fit: contain;
   position: relative;
-  z-index: 2
+  z-index: 2;
 }
 
 .sprite {
   transition: all 3s;
 }
+
+.flip-container {
+  perspective: 800px;
+}
+
+
+
+.flipper {
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  transform-origin: center;
+}
+.back {
+  transform: rotateY(180deg);
+}
+
+
+
+
 
 .alignright {
   transform: rotate(90deg);
@@ -394,14 +427,19 @@ img {
   transform: rotate(270deg);
 }
 
-:root {
-  --homestack: 2;
-  --parentstack: 1;
-}
 .flipper {
   opacity: 0;
   transition: all 2s;
 }
+
+
+
+
+
+
+
+
+/* all keyframes */
 
 @keyframes moveDown {
   0% {

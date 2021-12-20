@@ -209,43 +209,51 @@ var setupKeys = function() {
         judge(keyIndex);
       }
       flipper.forEach(function(i) {
-        var rotate = 0;
+        var new_state = 0;
+        var prev_state = 0;
+        var hello = document.getElementById('flop');
+        var transform = 'rotateY('+ prev_state + 'deg)';
+        var styles = window.getComputedStyle(document.getElementById('flop'), "").getPropertyValue('transform');
         if (keyIndex === 0) {
+
           document.getElementById('bleft').innerHTML = "";
           document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
-          rotate += 180;
-          flipper.style.transform = "rotateY(" + rotate + "deg)";
+          new_state += 180;
+          document.getElementById('flop').styles.transform = "rotateY(180deg)";
+          prev_state = new_state;
+          //rotate += 180;
+        //  flipper.style.transform = "rotateY(" + rotate + "deg)";
           document.getElementById('fleft').innerHTML = "";
           document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
 
 
         } else if (keyIndex === 1) {
           document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
-          rotate += 180;
-          flipper.style.transform = "rotateY(" + rotate + "deg)";
+          document.getElementById('bleft').innerHTML += '<img src = "img/left.png"/>';
+          //rotate += 180;
+          //flipper.style.transform = "rotateY(" + rotate + "deg)";
           document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
+          document.getElementById('bleft').innerHTML += '<img src = "img/left.png"/>';
 
 
         }
-        if (keyIndex === 2) {
+        else if (keyIndex === 2) {
           document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
-          rotate += 180;
-          flipper.style.transform = "rotateY(" + rotate + "deg)";
+          document.getElementById('bleft').innerHTML += '<img src = "img/top.jpg"/>';
+          //rotate += 180;
+          //flipper.style.transform = "rotateY(" + rotate + "deg)";
           document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          document.getElementById('bleft').innerHTML += '<img src = "img/top.jpg"/>';
 
 
         }
-        if (keyIndex === 3) {
+        else if (keyIndex === 3) {
           document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
-          rotate += 180;
-          flipper.style.transform = "rotateY(" + rotate + "deg)";
+          document.getElementById('bleft').innerHTML += '<img src = "img/right.jpg"/>';
+          //rotate += 180;
+          //flipper.style.transform = "rotateY(" + rotate + "deg)";
           document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png"/>';
+          document.getElementById('bleft').innerHTML += '<img src = "img/right.jpg"/>';
 
 
         }
