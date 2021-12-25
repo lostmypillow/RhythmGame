@@ -22,7 +22,7 @@
 
   <main>
     <div class="homewrapper">
-      <img src ="img/homescreen.jpg" id ="hhome">
+      <img src ="" id ="hhome">
       <button class="homebutton" id="hhomebutton"> Tap to start </a>
 
     </div>
@@ -156,7 +156,7 @@
     //top button
 $(document).keydown(function(event){
 var key = event.keyCode ? event.keyCode : event.which;
-    if (key == "38") {
+    if (key == "83") {
 
       $(".back").empty();
       $(".back").prepend('<img src = "img/bottom.png">');
@@ -166,21 +166,21 @@ var key = event.keyCode ? event.keyCode : event.which;
 
       $(".front").empty();
       $(".front").prepend('<img src = "img/bottom.png">');
-    } else if (key == "37") {
+    } else if (key == "70") {
       $(".back").empty();
       $(".back").prepend('<img src = "img/left.png">');
       rotate += 180;
       thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
       $(".front").empty();
       $(".front").prepend('<img src = "img/left.png">');
-    } else if (key == "39") {
+    } else if (key == "74") {
       $(".back").empty();
       $(".back").prepend('<img src = "img/right.jpg">');
       rotate += 180;
       thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
       $(".front").empty();
       $(".front").prepend('<img src = "img/right.jpg">');
-    } else if (key == "40") {
+    } else if (key == "76") {
       $(".back").empty();
       $(".back").prepend('<img src = "img/top.jpg">');
       rotate += 180;

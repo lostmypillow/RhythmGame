@@ -443,6 +443,51 @@ img {
   opacity: 0;
   transition: all 2s;
 }
+.front {
+  z-index: 2;
+}
+
+.flip-container,
+      .front,
+      .back {
+        width: 275px;
+      
+      }
+
+      /* flip speed */
+      .flipper {
+        transition: 0.8s;
+        transform-style: preserve-3d;
+        position: relative;
+        transform-origin: center;
+      }
+
+      /* hide back of pane during swap */
+      .front,
+      .back {
+        background-size: cover;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* Full height */
+
+
+ /* Center and scale the image nicely */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+      }
+      /* front pane, placed above back */
+      .front {
+        z-index: 2;
+      }
+
+      /* back, initially hidden pane */
+
+      .back {
+        transform: rotateY(180deg);
+      }
 
 
 
