@@ -56,9 +56,10 @@ h2 {
   display: flex;
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
   justify-content: center;
   align-items: center;
+
 }
 
 /* first page button */
@@ -136,7 +137,7 @@ h2 {
 .track-container {
   display: inline-flex;
   flex: 1 0 content;
-  background-color: white;
+  background-color: transparent;
 }
 
 .track {
@@ -149,6 +150,7 @@ h2 {
   width: 100%;
   height: 100%;
   top: -29rem;
+
 }
 
 
@@ -226,7 +228,7 @@ h2 {
   text-align: center;
   justify-content: space-around;
   transition: all 1s;
-position:relative;
+position:absolute;
 z-index: 3;
 }
 
@@ -279,6 +281,7 @@ z-index: 3;
 /* after game summary */
 
 .summary {
+  display:flex;
   position: relative;
   color: white;
   text-align: center;
@@ -374,7 +377,7 @@ z-index: 3;
 
 /*spinning anime section */
 .flip-container {
-
+position:absolute;
 }
 
 
@@ -389,6 +392,7 @@ img {
   object-fit: contain;
   position: relative;
   z-index: 2;
+  backface-visibility: hidden;
 }
 
 .sprite {
@@ -413,8 +417,16 @@ img {
 
 
 
+.note--1 {
+  transform:rotate(180deg);
+}
 
-
+.note--2 {
+  transform: rotate(270deg);
+}
+.note--3 {
+  transform: rotate(90deg);
+}
 .alignright {
   transform: rotate(90deg);
 }
@@ -434,9 +446,20 @@ img {
 
 
 
+#hhome {
+  object-fit: cover;
+  position:absolute;
+}
+#hhomebutton {
+  z-index: 3;
+  position:absolute;
+}
 
-
-
+#gamebk {
+  object-fit: cover;
+  position:absolute;
+  z-index: -5;
+}
 
 
 /* all keyframes */

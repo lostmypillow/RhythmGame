@@ -69,7 +69,7 @@
     <div class="flip-container">
       <div class="flipper">
         <div class="front">
-          <img src="img/top.jpg"/>
+          <img src="top.jpg" height="250px"/>
         </div>
         <div class="back"></div>
       </div>
@@ -96,36 +96,36 @@ $(document).keydown(function(event){
     var key = event.keyCode ? event.keyCode : event.which;
         if (key == "38") {
 
-          $("#back").empty();
+          $(".back").empty();
           //document.getElementById('bleft').innerHTML = ""
-          $("#back").prepend('<img src = "bottom.png" height=250px>');
+          $(".back").prepend('<img src = "bottom.png" height=250px>');
           ////document.getElementById('bleft').innerHTML += '<img src = "media/bottom.png">'
           rotate += 180;
           thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
 //thisFlipper.style.transform = "rotateY(" + rotate + "deg)"
-          $("#front").empty();
-          $("#front").prepend('<img src = "bottom.png" height=250px>');
+          $(".front").empty();
+          $(".front").prepend('<img src = "bottom.png" height=250px>');
         } else if (key == "37") {
-          $("#back").empty();
-          $("#back").prepend('<img src = "left.png" height=250px>');
+          $(".back").empty();
+          $(".back").prepend('<img src = "left.png" height=250px>');
           rotate += 180;
           thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
-          $("#front").empty();
-          $("#front").prepend('<img src = "left.png" height=250px>');
+          $(".front").empty();
+          $(".front").prepend('<img src = "left.png" height=250px>');
         } else if (key == "39") {
-          $("#back").empty();
-          $("#back").prepend('<img src = "right.jpg" height=250px>');
+          $(".back").empty();
+          $(".back").prepend('<img src = "right.jpg" height=250px>');
           rotate += 180;
           thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
-          $("#front").empty();
-          $("#front").prepend('<img src = "right.jpg" height=250px>');
+          $(".front").empty();
+          $(".front").prepend('<img src = "right.jpg" height=250px>');
         } else if (key == "40") {
-          $("#back").empty();
-          $("#back").prepend('<img src = "top.jpg" height=250px>');
+          $(".back").empty();
+          $(".back").prepend('<img src = "top.jpg" height=250px>');
           rotate += 180;
           thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
-          $("#front").empty();
-          $("#front").prepend('<img src = "top.jpg" height=250px>');
+          $(".front").empty();
+          $(".front").prepend('<img src = "top.jpg" height=250px>');
         }
 
 

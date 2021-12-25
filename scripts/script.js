@@ -39,7 +39,7 @@ var initializeNotes = function() {
     trackContainer.removeChild(trackContainer.lastChild);
   }
 
-  song.sheet.forEach(function(key, index) {
+  song.sheet.forEach(function(key, index, i) {
     trackElement = document.createElement('div');
     trackElement.classList.add('track');
 
@@ -51,6 +51,7 @@ var initializeNotes = function() {
       noteElement = document.createElement('div');
       noteElement.classList.add('note');
       noteElement.classList.add('note--' + index);
+    //  noteElement.classlist.add('alignright');//
     //  noteElement.style.backgroundColor = key.color;//
     noteElement.appendChild(img);
       noteElement.style.animationName = animation;
@@ -177,6 +178,9 @@ var showResult = function() {
   document.querySelector('.score__count').innerHTML = score;
   document.querySelector('.summary__timer').style.opacity = 0;
   document.querySelector('.summary__result').style.opacity = 1;
+  document.querySelectorAll('.flip-container').forEach(function (i) {
+    i.style.opacity = 0;
+});
 };
 
 var setupNoteMiss = function() {
@@ -211,52 +215,52 @@ var setupKeys = function() {
       flipper.forEach(function(i) {
         var new_state = 0;
         var prev_state = 0;
-        var hello = document.getElementById('flop');
-        var transform = 'rotateY('+ prev_state + 'deg)';
-        var styles = window.getComputedStyle(document.getElementById('flop'), "").getPropertyValue('transform');
-        if (keyIndex === 0) {
+  //      var hello = document.getElementById('flop');
+    //    var transform = 'rotateY('+ prev_state + 'deg)';
+      //  var styles = window.getComputedStyle(document.getElementById('flop'), "").getPropertyValue('transform');
+    //    if (keyIndex === 0) {
 
-          document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
-          new_state += 180;
-          document.getElementById('flop').styles.transform = "rotateY(180deg)";
-          prev_state = new_state;
+      //    document.getElementById('bleft').innerHTML = "";
+      //    document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
+      //    new_state += 180;
+      //    document.getElementById('flop').styles.transform = "rotateY(180deg)";
+        //  prev_state = new_state;
           //rotate += 180;
         //  flipper.style.transform = "rotateY(" + rotate + "deg)";
-          document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/bottom.png"/>';
+      //    document.getElementById('fleft').innerHTML = "";
+      //    document.getElementById('fleft').innerHTML += '<img src = "img/bottom.png"/>';
 
 
-        } else if (keyIndex === 1) {
-          document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/left.png"/>';
+  //      } else if (keyIndex === 1) {
+  //        document.getElementById('bleft').innerHTML = "";
+  //        document.getElementById('bleft').innerHTML += '<img src = "img/left.png"/>';
           //rotate += 180;
           //flipper.style.transform = "rotateY(" + rotate + "deg)";
-          document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/left.png"/>';
+      //    document.getElementById('fleft').innerHTML = "";
+    //      document.getElementById('bleft').innerHTML += '<img src = "img/left.png"/>';
 
 
-        }
-        else if (keyIndex === 2) {
-          document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/top.jpg"/>';
+    //    }
+    //    else if (keyIndex === 2) {
+    //      document.getElementById('bleft').innerHTML = "";
+    //      document.getElementById('bleft').innerHTML += '<img src = "img/top.jpg"/>';
           //rotate += 180;
           //flipper.style.transform = "rotateY(" + rotate + "deg)";
-          document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/top.jpg"/>';
+    //      document.getElementById('fleft').innerHTML = "";
+    //      document.getElementById('bleft').innerHTML += '<img src = "img/top.jpg"/>';
 
 
-        }
-        else if (keyIndex === 3) {
-          document.getElementById('bleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/right.jpg"/>';
+    //    }
+    //    else if (keyIndex === 3) {
+    //      document.getElementById('bleft').innerHTML = "";
+    //      document.getElementById('bleft').innerHTML += '<img src = "img/right.jpg"/>';
           //rotate += 180;
           //flipper.style.transform = "rotateY(" + rotate + "deg)";
-          document.getElementById('fleft').innerHTML = "";
-          document.getElementById('bleft').innerHTML += '<img src = "img/right.jpg"/>';
+    //      document.getElementById('fleft').innerHTML = "";
+    //      document.getElementById('bleft').innerHTML += '<img src = "img/right.jpg"/>';
 
 
-        }
+    //    }
       });
 
     }

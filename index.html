@@ -22,19 +22,21 @@
 
   <main>
     <div class="homewrapper">
-      <button class="homebutton"> Tap to start </a>
+      <img src ="img/homescreen.jpg" id ="hhome">
+      <button class="homebutton" id="hhomebutton"> Tap to start </a>
 
     </div>
     <div id="parent">
+      <img src = "" id ="gamebk">
       <div class="left_sec">
-
-        <div class="flipper" id ="flop">
-          <div class="front" id="fleft">
+<div class = "flip-container">
+        <div class="flipper" >
+          <div class="front">
             <img src="img/top.jpg">
           </div>
-          <div class="back" id="bleft"></div>
+          <div class="back"></div>
         </div>
-
+</div>
       </div>
 
       <div class="game">
@@ -145,6 +147,54 @@
 
   <script src="scripts/song.js"></script>
   <script src="scripts/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(".flip-container").each(function(i) {
+    var thisFlipper = $(this).find(".flipper");
+    var rotate = 0;
+
+    //top button
+$(document).keydown(function(event){
+var key = event.keyCode ? event.keyCode : event.which;
+    if (key == "38") {
+
+      $(".back").empty();
+      $(".back").prepend('<img src = "img/bottom.png">');
+
+      rotate += 180;
+      thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
+
+      $(".front").empty();
+      $(".front").prepend('<img src = "img/bottom.png">');
+    } else if (key == "37") {
+      $(".back").empty();
+      $(".back").prepend('<img src = "img/left.png">');
+      rotate += 180;
+      thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
+      $(".front").empty();
+      $(".front").prepend('<img src = "img/left.png">');
+    } else if (key == "39") {
+      $(".back").empty();
+      $(".back").prepend('<img src = "img/right.jpg">');
+      rotate += 180;
+      thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
+      $(".front").empty();
+      $(".front").prepend('<img src = "img/right.jpg">');
+    } else if (key == "40") {
+      $(".back").empty();
+      $(".back").prepend('<img src = "img/top.jpg">');
+      rotate += 180;
+      thisFlipper.css({ transform: "rotateY(" + rotate + "deg)" });
+      $(".front").empty();
+      $(".front").prepend('<img src = "img/top.jpg">');
+    }
+
+
+  });//document outer
+
+});  //flip container
+
+</script>
 
 </body>
 
