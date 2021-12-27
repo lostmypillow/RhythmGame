@@ -137,6 +137,7 @@ var setupStartButton = function() {
   document.querySelectorAll('.flipper').forEach(function (ha) {
     ha.style.opacity = 1;
   });
+  document.querySelector('.trackContainer').style.perspective = '200px';
     document.querySelector('.song').play();
     document.querySelectorAll('.note').forEach(function(note) {
       note.style.animationPlayState = 'running';

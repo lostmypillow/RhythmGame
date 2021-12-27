@@ -73,7 +73,7 @@ h2 {
   display: flex;
   flex: 0 0 calc(100% / 2);
   flex-direction: column;
-  max-width: 35rem;
+
 
   position: relative;
   width: 33%;
@@ -138,11 +138,13 @@ h2 {
   display: inline-flex;
   flex: 1 0 content;
   background-color: transparent;
+  transform: rotateX(30deg) scale(1.5) scaleX(0.72);
 }
 
 .track {
   position: relative;
   flex: 0 0 calc(100% / 4);
+
 }
 
 .note {
@@ -451,7 +453,7 @@ img {
       .front,
       .back {
         width: 275px;
-      
+
       }
 
       /* flip speed */
@@ -468,8 +470,8 @@ img {
         background-size: cover;
         backface-visibility: hidden;
         position: absolute;
-        top: 0;
-        left: 0;
+top:0;
+right:0;
         /* Full height */
 
 
@@ -492,8 +494,9 @@ img {
 
 
 #hhome {
-  object-fit: cover;
+  object-fit: scale-down;
   position:absolute;
+  z-index: -4;
 }
 #hhomebutton {
   z-index: 3;

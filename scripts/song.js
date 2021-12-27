@@ -1,5 +1,4 @@
 var s = {
-  color: 'rgba(28, 121, 228, 1)',
   next: 0,
   notes: [
     { duration: 3, delay: 4.2 },
@@ -18,7 +17,6 @@ var s = {
 
 
 var f = {
-  color: 'rgba(28, 121, 228, 1)',
   next: 0,
   notes: [
     { duration: 3, delay: 0.2 },
@@ -37,7 +35,6 @@ var f = {
 
 
 var j = {
-  color: 'rgba(28, 121, 228, 1)',
   next: 0,
   notes: [
     { duration: 3, delay: 3.2 },
@@ -79,7 +76,6 @@ var j = {
 
 
 var l = {
-  color: 'rgba(28, 121, 228, 1)',
   next: 0,
   notes: [
     { duration: 3, delay: 0.2 },
