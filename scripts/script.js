@@ -31,7 +31,7 @@ var tracks;
 var keypress;
 var comboText;
 
-var initializeNotes = function() {
+/* var initializeNotes = function() {
   var noteElement;
   var trackElement;
 
@@ -66,7 +66,7 @@ var initializeNotes = function() {
     tracks = document.querySelectorAll('.track');
   });
 };
-
+*/
 var setupSpeed = function() {
   var buttons = document.querySelectorAll('.btn--small');
 
