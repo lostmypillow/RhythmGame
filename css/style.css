@@ -138,7 +138,7 @@ h2 {
   display: inline-flex;
   flex: 1 0 content;
   background-color: transparent;
-  transform: rotateX(30deg) scale(1.5) scaleX(0.72);
+
 }
 
 .track {
@@ -170,7 +170,7 @@ h2 {
   align-items: center;
   align-content: center;
   position: relative;
-  background-image: url("arrow.svg");
+  
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
