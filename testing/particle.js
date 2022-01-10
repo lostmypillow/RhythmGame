@@ -3,14 +3,14 @@ const clamp = (value, min, max) => {
   if (value < min) return min;
   if (value > max) return max;
   return value;
-}
+};
 export default class Particle{
     constructor(img,x,y,color, velX, velY, size){
         this.x = x;
         this.y = y;
-        this.velX = clamp(velX,-20,20)
+        this.velX = clamp(velX,-20,20);
         this.img = img;
-        this.velY = clamp(velY,-20,20)
+        this.velY = clamp(velY,-20,20);
         this.defaultSize = 40;
         this.color = color;
         this.maxLife = 10;

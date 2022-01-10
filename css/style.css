@@ -137,11 +137,10 @@ display:flex;
 }
 
 .note {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
 top:0;
-z-index: 500;
 }
 
 /* key wrapper*/
@@ -270,7 +269,7 @@ z-index: 500;
   position: relative;
   color: white;
   text-align: center;
-  z-index: -100;
+
 }
 
 .summary__timer {
@@ -560,14 +559,14 @@ img {
 /* all keyframes */
 @keyframes moveDown {
   0% {
-    top: 0;
-    transform: scale(0);
+    top: 1.5rem;
+
 
   }
 
   100% {
-    bottom:0;
-    transform: scale(1);
+    top: 0;
+
   }
 }
 
