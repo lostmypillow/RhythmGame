@@ -114,7 +114,7 @@ var setupSpeed = function() {
 //  initializeNotes();
 //};
 var setuphomebutton = function() {
-  var homebutton = document.querySelector('.homebutton');
+  var homebutton = document.querySelector('.neon-button');
   homebutton.addEventListener('click', function() {
     document.querySelector('.homewrapper').style.opacity = 0;
 //    document.querySelector('.homewrapper').style.setProperty = 0;//
