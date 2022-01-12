@@ -48,7 +48,6 @@ h2 {
   opacity: 0;
   transition: all 5s;
   z-index: 1;
-
 }
 
 /* first page, or landing page with graphics */
@@ -129,6 +128,14 @@ display:flex;
   background-color: transparent;
 }
 
+.note-container {
+  position:relative;
+  height: 100%;
+  width: 50%;
+  background-color: green;
+  top:0;
+}
+
 .track {
   position: relative;
   flex: 0 0 calc(100% / 4);
@@ -140,20 +147,18 @@ display:flex;
   position: absolute;
   width: 100%;
   height: 100%;
-top:0;
+  top: 0;
 }
 
 /* key wrapper*/
 .key-container {
   position: absolute;
   bottom: 0;
-
-  width:90%;
+  width: 90%;
   display: flex;
   flex: 0 0 15%;
   background-color: rgba(0, 0, 0, 0);
   color: transparent;
-
 }
 
 .key {
@@ -269,7 +274,6 @@ top:0;
   position: relative;
   color: white;
   text-align: center;
-
 }
 
 .summary__timer {
@@ -343,8 +347,7 @@ top:0;
 
 .game {
   position: relative;
-  display: flex;
-  position: relative;
+  display: inline-flex;
   width: 60%;
   justify-content: center;
 }
@@ -471,10 +474,8 @@ img {
   transform: rotateY(180deg);
 }
 
-
 .neon-button {
   font-size: 4rem;
-
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
@@ -482,11 +483,8 @@ img {
   border: var(--clr-neon) 0.125em solid;
   padding: 0.25em 1em;
   border-radius: 0.25em;
-
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
-
   box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
-
   position: relative;
 }
 
@@ -499,7 +497,6 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-
   transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
   filter: blur(1em);
   opacity: 0.7;
@@ -529,15 +526,11 @@ img {
 .neon-button:focus::before {
   opacity: 1;
 }
+
 .neon-button:hover::after,
 .neon-button:focus::after {
   opacity: 1;
 }
-
-
-
-
-
 
 #hhome {
   object-fit: scale-down;
@@ -559,16 +552,19 @@ img {
 /* all keyframes */
 @keyframes moveDown {
   0% {
-    top: 1.5rem;
+     top: -29rem;
+   }
 
+   98% {
+     top: 95%;
+     opacity: 1;
+   }
 
-  }
-
-  100% {
-    top: 0;
-
-  }
-}
+   100% {
+     top: 100%;
+     opacity: 0;
+   }
+ }
 
 @keyframes moveDownFade {
   0% {

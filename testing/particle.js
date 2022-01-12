@@ -3,14 +3,14 @@ const clamp = (value, min, max) => {
   if (value < min) return min;
   if (value > max) return max;
   return value;
-};
+}
 export default class Particle{
     constructor(img,x,y,color, velX, velY, size){
         this.x = x;
         this.y = y;
-        this.velX = clamp(velX,-20,20);
+        this.velX = clamp(velX,-20,20)
         this.img = img;
-        this.velY = clamp(velY,-20,20);
+        this.velY = clamp(velY,-20,20)
         this.defaultSize = 40;
         this.color = color;
         this.maxLife = 10;
@@ -31,12 +31,12 @@ export default class Particle{
         this.rotation += this.life/100;
         this.size = this.defaultSize*this.life/this.maxLife;
         ctx.fillStyle = this.color;
-        ctx.save();
-
-        ctx.translate(this.x,this.y);
-        ctx.rotate(this.rotation);
+        ctx.save()
+        
+        ctx.translate(this.x,this.y)
+        ctx.rotate(this.rotation)
         // ctx.fillRect(-this.size/2,-this.size/2, this.size,this.size)
-        ctx.drawImage(this.img,-this.size/2,-this.size/2, this.size,this.size);
-        ctx.restore();
+        ctx.drawImage(this.img,-this.size/2,-this.size/2, this.size,this.size)
+        ctx.restore()
     }
 }
