@@ -13,7 +13,7 @@
   --miss-color: rgba(199, 184, 184, .8);
   --maxcombo-color: rgba(0, 110, 255, .8);
   --score-color: rgba(240, 202, 36, .8);
-  /* --hit-effect: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .3)); */
+   --hit-effect: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .3)); */
   --hit-color: rgba(255, 255, 255, .8);
   /*  --key-red: rgba(254, 45, 87, 1); */
   --key-blue: rgba(28, 121, 228, 1);
@@ -21,8 +21,8 @@
   --keypress-red: linear-gradient(to top, rgba(254, 45, 87, .6), rgba(254, 45, 87, 0)); */
   /**--keypress-blue: linear-gradient(to top, rgba(28, 121, 228, .6), rgba(28, 121, 228, 0));*/
   /*  --keypress-orange: linear-gradient(to top, rgba(240, 128, 60, .6), rgba(240, 128, 60, 0)); */
-  --clr-neon: hsl(317 100% 54%);
-  --clr-bg: hsla(192, 100%, 46%, 0.3);
+  --clr-neon: rgba(0, 116, 255, 0.86);
+  --clr-bg: rgba(255,255,255, 0.9);
 }
 
 html {
@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  font-family: "Playball";
+  font-family: "Amatic SC";
   background: var(--background);
   overflow: hidden;
 }
@@ -140,7 +140,7 @@ display:flex;
   position: relative;
   flex: 0 0 calc(100% / 4);
   border-style: solid;
-  border-color: red;
+  border-color: rgba(0, 116, 255, 0.86);
 }
 
 .note {
@@ -234,7 +234,7 @@ display:flex;
 .btn:link,
 .btn:visited {
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 116, 255, 1);
   font-size: 1.6rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -246,7 +246,7 @@ display:flex;
 
 .btn:hover,
 .btn:active {
-  background: black;
+  background: rgba(0, 116, 255, 1);
   color: white;
 }
 
@@ -264,14 +264,13 @@ display:flex;
 }
 
 .config__speed .btn--selected {
-  background: black;
+  background: rgba(0, 116, 255, 1.0);
   color: white;
 }
 
 /* after game summary */
 .summary {
-  display: flex;
-  position: relative;
+
   color: white;
   text-align: center;
 }
@@ -548,6 +547,20 @@ img {
   position: absolute;
   z-index: -5;
 }
+
+
+*{margin: 0;padding: 0;}
+        canvas{display: block;}
+
+        .wand{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background:url("wand.png") no-repeat 0 0;
+            background-size: contain;
+            z-index: 100;
+            pointer-events: none;
+        }
 
 /* all keyframes */
 @keyframes moveDown {

@@ -40,13 +40,12 @@ class Sketch{
             "#000000",
         ];
 
-        loadImages(["1_.png","2_.png","3_.png"],(images)=>{
+        loadImages(["img/1_.png"],(images)=>{
             console.log(images);
             this.images = images;
             this.img = images[0].img;
             this.raf();
             this.mousemove();
-            this.mouseover();
         });
 
     }

@@ -380,11 +380,25 @@ var removeNoteFromTrack = function(parent, child) {
 var updateNext = function(index) {
   song.sheet[index].next++;
 };
+function startShowing(){
+  var elementToHide = document.querySelector(".neon-button");
+  elementToHide.style.opacity = 0;
+  var intervalId = setInterval(function(){
+    if(elementToHide.style.opacity >= 1)
+    {
+      clearInterval(intervalId);
+    }else{
+      elementToHide.style.opacity = parseFloat(elementToHide.style.opacity) + 0.1;
+    }
+  },500);
+}
+
 
 window.onload = function() {
   trackContainer = document.querySelector('.track-container');
   keypress = document.querySelectorAll('.keypress');
   comboText = document.querySelector('.hit__combo');
+startShowing();
   setuphomebutton();
   initializeNotes();
   setupSpeed();

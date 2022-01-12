@@ -10,17 +10,19 @@
   <meta property="og:url" content="" />
   <meta property="og:image" content="" />
   <link rel="shortcut icon" type="image/png" href="" />
-  <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <title>Game</title>
+  <title>Rhythm Game</title>
+
 </head>
 
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+  <script src="scripts/app.js" type="module"></script>
   <audio class="song" src="media/music.mp3"></audio>
 
   <main>
+    <div class="wand"></div>
     <div class="homewrapper">
       <img src="img/homescreen.PNG" id="hhome">
 
@@ -45,7 +47,7 @@
           <div class="hit__combo"></div>
           <div class="hit__accuracy"></div>
         </div>
-      
+
 
         <div class="track-container"></div>
 
@@ -146,12 +148,16 @@
           </div>
         </div>
 
+
+
+
   </main>
 
   <script src="scripts/song.js"></script>
   <script src="scripts/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
+
     $(".flip-container").each(function(i) {
       var thisFlipper = $(this).find(".flipper");
       var rotate = 0;
